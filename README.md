@@ -1,5 +1,5 @@
 <p align="center"><img src="https://raw.githubusercontent.com/melonDS-emu/melonDS/master/res/icon/melon_128x128.png"></p>
-<h2 align="center"><b>melonDS</b></h2>
+<h2 align="center"><b>melonDS Menel Forks</b></h2>
 <p align="center">
 <a href="http://melonds.kuribo64.net/" alt="melonDS website"><img src="https://img.shields.io/badge/website-melonds.kuribo64.net-%2331352e.svg"></a>
 <a href="http://melonds.kuribo64.net/downloads.php" alt="Release: 1.1"><img src="https://img.shields.io/badge/release-1.1-%235c913b.svg"></a>
@@ -12,10 +12,65 @@
 <a href="https://github.com/melonDS-emu/melonDS/actions/workflows/build-macos.yml?query=event%3Apush"><img src="https://github.com/melonDS-emu/melonDS/actions/workflows/build-macos.yml/badge.svg" /></a>
 <a href="https://github.com/melonDS-emu/melonDS/actions/workflows/build-bsd.yml?query=event%3Apush"><img src="https://github.com/melonDS-emu/melonDS/actions/workflows/build-bsd.yml/badge.svg" /></a>
 </p>
-DS emulator, sorta
 
-The goal is to do things right and fast, akin to blargSNES (but hopefully better). But also to, you know, have a fun challenge :)
-<hr>
+These are my forks of melonds adding features I thought should be there already
+## 📺 MenuBarToggle Fork
+*Implemented a hotkey to hide the Menu Bar.*
+
+I created this because I recently got a vertical grip for my Nintendo Switch, which is perfect for DS games. When streaming melonDS from my PC via Moonlight, the Menu Bar was the last thing cluttering the screen.
+
+> [!NOTE]
+> **Full Disclosure:** I am still learning programming. This feature was developed using "vibecoding" (with AI assistance from Grok). While it might not be a 100% professional implementation, it works exactly as intended. Enjoy!
+
+---
+
+## 🏆 RetroAchievements Implementation
+*Bringing RetroAchievements (RA) support to melonDS.*
+
+I saw that the community really wanted RA support, so I decided to take on the challenge. This is a rough, beta implementation that I’ve tested extensively over the last week. I am a huge fan of RetroAchievements and very proud of this progress.
+
+**Important:** This is currently unofficial, so Hardcore mode does not yet provide official Hardcore points.
+
+### ✅ Current Features
+* Full backend integration.
+* Core frontend implementation.
+* Basic connectivity and achievement unlocking.
+* Achievements and their info is shown on getting them.
+* Basic Login in EmuSettings under new tab.
+
+### 🛠️ Known Issues & Planned Features
+<ul>
+  <li><b>Leaderboards:</b> Not yet implemented.</li>
+  <li><b>Overlay:</b> Missing in-game achievement list.</li>
+  <li><b>Progress Indicators:</b> Achievement progress is not currently tracked visually, there is only notification on getting achievement.</li>
+  <li><b>Hardcore Approval:</b> Still fixing stuff, so when it will be more than a beta then it could be possible.</li>
+  <li><b>Memory Access:</b> VRAM and ARM9 IO memory reading is missing (may affect specific achievements, but i wouldn't worry about that).</li>
+  <li><b>Offline Caching:</b> Session recovery works, but the emulator does not cache achievement data to local files yet.</li>
+  <li><b>Player Profile:</b> Visible points and profile integration (optional).</li>
+</ul>
+
+> [!NOTE]
+> **Full Disclosure:** This feature also was developed using "vibecoding" (this time mainly ChatGpt and Gemini). I really put my heart into that implementation, and I hope people will actually think of it as nice thing, so I don't consider my time as wasted.
+
+---
+
+## How to build
+See [BUILD.md](./BUILD.md) for build instructions. this works for menubar fork
+> [!NOTE]
+> **For RA Implementation** you need to install additional dependencies. Also building may not fully work, but feedback is appreciated
+
+Curl : pacman -S <prefix>-{toolchain,cmake,SDL2,libarchive,enet,zstd,faad2,curl}
+
+## 💜 Support My Work
+
+### 🎮 Twitch
+Catch me live on **[My Twitch Channel](https://www.twitch.tv/panmenelg)**! I stream my development process and some gameplay. Feel free to drop by, and say hi!
+
+### ☕ Donate
+If you find my forks useful and want to support further development, you can buy me a coffee here:
+**[There is no better way to thank me for my work ;D](https://ko-fi.com/panmenel)**
+
+Your support helps me keep learning and adding more features!
 
 ## How to use
 
@@ -31,9 +86,6 @@ DS firmwares dumped from a DSi or 3DS aren't bootable and only contain configura
 DS BIOS dumps from a DSi or 3DS can be used with no compatibility issues. DSi BIOS dumps (in DSi mode) are not compatible. Or maybe they are. I don't know.
 
 As for the rest, the interface should be pretty straightforward. If you have a question, don't hesitate to ask, though!
-
-## How to build
-See [BUILD.md](./BUILD.md) for build instructions.
 
 ## TODO LIST
 
