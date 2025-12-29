@@ -14,8 +14,9 @@
 </p>
 
 These are my forks of melonds adding features I thought should be there already
-## 📺 MenuBarToggle Fork
+## 📺 MenuBarToggle Fork [link to branch](https://github.com/PanMenel/melonDS-Menel-Forks/tree/Menubartoggle)
 *Implemented a hotkey to hide the Menu Bar.*
+
 
 I created this because I recently got a vertical grip for my Nintendo Switch, which is perfect for DS games. When streaming melonDS from my PC via Moonlight, the Menu Bar was the last thing cluttering the screen.
 
@@ -24,7 +25,7 @@ I created this because I recently got a vertical grip for my Nintendo Switch, wh
 
 ---
 
-## 🏆 RetroAchievements Implementation
+## 🏆 RetroAchievements Implementation [link to branch](https://github.com/PanMenel/melonDS-Menel-Forks/tree/Retro-Achievements-Implementation)
 *Bringing RetroAchievements (RA) support to melonDS.*
 
 I saw that the community really wanted RA support, so I decided to take on the challenge. This is a rough, beta implementation that I’ve tested extensively over the last week. I am a huge fan of RetroAchievements and very proud of this progress.
