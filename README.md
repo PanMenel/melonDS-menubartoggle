@@ -60,7 +60,15 @@ See [BUILD.md](./BUILD.md) for build instructions. this works for menubar fork
 > [!NOTE]
 > **For RA Implementation** you need to install additional dependencies. Also building may not fully work, but feedback is appreciated
 
-Curl : pacman -S <prefix>-{toolchain,cmake,SDL2,libarchive,enet,zstd,faad2,curl}
+* Dependencies
+* Curl : pacman -S <prefix>-{toolchain,cmake,SDL2,libarchive,enet,zstd,faad2,curl}
+---
+* here are intructions for building your own RA build but i am not sure if it will work on all pcs
+* git clone -b Retro-Achievements-Implementation --single-branch https://github.com/PanMenel/melonDS-Menel-Forks
+* cd melonDS-Menel-Forks
+* cmake -B build -DBUILD_STATIC=ON -DUSE_QT6=OFF -DCMAKE_PREFIX_PATH=$MSYSTEM_PREFIX/qt5-static for static / for dynamic, it is broken for now but fixable easly.
+* cmake --build build
+
 
 ## 💜 Support My Work
 
