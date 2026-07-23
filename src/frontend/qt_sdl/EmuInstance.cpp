@@ -48,6 +48,8 @@
 #include "FreeBIOS.h"
 #include "main.h"
 
+#include "NDSCart/CartSD.h"
+
 using std::make_unique;
 using std::pair;
 using std::string;
@@ -159,6 +161,7 @@ EmuInstance::~EmuInstance()
     emuThread->emuExit();
     emuThread->wait();
     delete emuThread;
+    emuThread = nullptr;
 
     net.UnregisterInstance(instanceID);
 
@@ -342,6 +345,8 @@ void EmuInstance::osdAddMessage(unsigned int color, const char* fmt, ...)
 
 bool EmuInstance::emuIsActive()
 {
+    if (emuThread == nullptr)
+        return false;
     return emuThread->emuIsActive();
 }
 
@@ -1206,6 +1211,15 @@ void EmuInstance::setDateTime()
     nds->RTC.SetDateTime(time.date().year(), time.date().month(), time.date().day(),
                          time.time().hour(), time.time().minute(), time.time().second());
 }
+
+void EmuInstance::syncRTC()
+{
+    if (!localCfg.GetBool("RTC.SyncToHost"))
+        return;
+
+    setDateTime();
+}
+
 
 bool EmuInstance::updateConsole() noexcept
 {
